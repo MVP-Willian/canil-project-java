@@ -6,7 +6,7 @@ package br.com.adocao.model;
  * e estado atual (situação) do animal.
  */
 public class Animal {
-    private int id;
+    private Integer id;
     private String nome;
     private int idade;
     private String especie; //gato ou cachorro
@@ -33,7 +33,7 @@ public class Animal {
      * @param porte O porte do animal (ex: "Pequeno", "Médio", "Grande").
      * @param peso O peso do animal em kg.
      */
-    public Animal(int id, String nome, int idade, String especie, String sexo, String personalidade, String historico, String localEncontrado, String situacao, String porte, float peso){
+    public Animal(Integer id, String nome, int idade, String especie, String sexo, String personalidade, String historico, String localEncontrado, String situacao, String porte, float peso){
         this.id = id;
         this.nome = nome;
         this.idade = idade;
@@ -187,6 +187,6 @@ public class Animal {
      */
     @Override
     public String toString(){
-        return nome + " - " + especie + " - " + idade + " anos - " + situacao;
+        return id + " - " + nome + " - " + especie + " - " + idade + " anos - " + situacao;
     }
 }

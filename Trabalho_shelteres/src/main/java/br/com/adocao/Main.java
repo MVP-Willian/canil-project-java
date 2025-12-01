@@ -1,10 +1,12 @@
 package br.com.adocao;
 
 import br.com.adocao.model.*;
+import br.com.adocao.persistence.*;
 import br.com.adocao.services.*;
-import br.com.adocao.persistence.DatabaseInitializer;
-import br.com.adocao.persistence.AnimalDAO;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.awt.*;
 import java.util.*;
 import java.util.List;
@@ -17,7 +19,7 @@ import java.util.List;
  * Esta classe utiliza listas em memória para simular um banco de dados.
  */
 public class Main {
-    // --- Variáveis Estáticas Globais ---
+    // ======================================================== Variáveis Estáticas Globais ==========================================
 
     /** Scanner global para ler a entrada do usuário em todo o sistema. */
     private static Scanner sc = new Scanner(System.in);
@@ -31,6 +33,12 @@ public class Main {
     //** Objeto intermediário que será usado para conectar os dados em memória para o banco de dados. */
     private static AnimalDAO animalDAO = new AnimalDAO();
 
+    //** Objeto intermediário que será usado para conectar os dados em memória para o banco de dados. */
+    private static UserDAO userDAO = new UserDAO();
+
+    //** Objeto intermediário que será usado para conectar os dados em memória para o banco de dados. */
+    private static SolicitacaoDAO solicitacaoDAO = new SolicitacaoDAO();
+
     /** Lista em memória que simula a tabela de animais. (Classe Animal não fornecida, mas presumida) */
     private static List<Animal> animais = new ArrayList<>();
 
@@ -43,6 +51,9 @@ public class Main {
     /** Armazena o admin que está logado no momento. 'null' se nenhum admin estiver logado. */
     private static Admin adminLogado = null;
 
+
+
+    // ========================================== MAIN PRINCIPAL ========================================================
     /**
      * Ponto de entrada (entry point) da aplicação.
      *
@@ -61,21 +72,39 @@ public class Main {
         limparBancoAnimais();
     }
 
+    // ========================================== MÉTODOS PREVISÓRIOS ========================================================
     public static void testarAnimalDAO(){
         System.out.println(" ====== TESTE NO BANCO DE DADOS (AnimalDAO) ======");
 
         try {
+
             Animal animal = new Animal(434, "trufinha", 4, "vira-lata", "M",
                     "Possui um rabo cortado", "Ainda nao foi vacinado",
                     "-3.0702569,-59.9534721", "Disponível", "grande", 35);
 
+            Admin michael = new Admin("michael", "michael@gmail.com",
+                    "21412453412", "1234", 3600.0f, true);
+            // Adiciona um usuário padrão
+            User user = new User("user", "user@gmail.com",
+                    "02423459302", "1234", 15000.0f, true);
+
+
+            userDAO.inserir(user);
+            userDAO.inserir(michael);
+
             animalDAO.inserir(animal);
 
             List<Animal> animaisBanco = animalDAO.listarTodos();
+            List<User> usuariosBanco = userDAO.listarTodos();
 
             System.out.println("\nAnimais vindo do BANCO:");
             for (Animal a : animaisBanco) {
                 System.out.println(a);
+            }
+
+            System.out.println("\nUser vindo do BANCO:");
+            for (User u : usuariosBanco) {
+                System.out.println(u + u.getTipoConta());
             }
 
         } catch (Exception e) {
@@ -92,6 +121,7 @@ public class Main {
         if(op.equalsIgnoreCase("s")) {
             try {
                 animalDAO.limparTabela();
+                solicitacaoDAO.limparTabela();
                 System.out.println("✅ Banco de animais limpo com sucesso!");
             } catch (Exception e) {
                 System.out.println("❌ Erro ao limpar banco: " + e.getMessage());
@@ -101,6 +131,7 @@ public class Main {
         }
     }
 
+
     /**
      * Popula as listas em memória com dados de exemplo (mock data).
      * Isso permite testar a aplicação sem um banco de dados real.
@@ -108,10 +139,10 @@ public class Main {
     private static void carregarDadosIniciais() {
         // Adiciona um admin padrão
         admins.add(new Admin("Admin1", "user@gmail.com",
-                "21412453412", "032105", 3600.0f));
+                "21412453412", "1234", 3600.0f, true));
         // Adiciona um usuário padrão
-        usuarios.add(new User("Michael", "michael.vieira@icomp.ufam.edu.br",
-                "02423459302", "guiguinho", 15000.0f));
+        usuarios.add(new User("Michael", "michael@gmail.com",
+                "02423459302", "1234", 15000.0f, true));
         // Adiciona animais de exemplo
         animais.add(new Animal(434, "trufinha", 4, "vira-lata", "M",
                 "Possui um rabo cortado", "Ainda nao foi vacinado",
@@ -126,11 +157,24 @@ public class Main {
      * O menu exibido se adapta dinamicamente com base no estado de login
      * (usuário comum, admin, ou deslogado).
      */
+
+
+
+
+
+    // ======================================================== fluxo main principal ========================================================
     private static void menuPrincipal(){
         // Loop infinito para manter o menu ativo
         while(true){
-            System.out.println("\n=== Sistema de Adoção e Resgate ===");
+            System.out.println("\n=============== Sistema de Adoção e Resgate =====================");
             System.out.println("Animais para adoção:");
+
+            AnimalDAO animalDAO = new AnimalDAO();
+            try {
+                animais = animalDAO.listarTodos();
+            } catch (Exception e) {
+                System.out.println("Erro ao acessar o banco de dados para ver os animais salvos:");
+            }
 
             // Usando Stream API para filtrar e exibir animais "Disponíveis"
             animais.stream()
@@ -154,22 +198,24 @@ public class Main {
                 System.out.println("2. Verificar todos os animais");
                 System.out.println("3. Adicionar um animal.");
                 System.out.println("4. Adicionar um resgate.");
-                System.out.println("5. Adicionar um Admin");
-                System.out.println("6. Logout"); // Corrigido para 6
-                System.out.println("7. Sair"); // Corrigido para 7
+                System.out.println("5. Remover um animal.");
+                System.out.println("6. Logout");
+                System.out.println("7. Sair");
 
             } else {
                 // Menu para USUÁRIO COMUM LOGADO
                 System.out.println("1. Quero adotar um animal.");
                 System.out.println("2. Quero registrar um resgate.");
                 System.out.println("3. Ver minhas solicitações");
-                System.out.println("4. Logout");
-                System.out.println("5. Sair");
+                System.out.println("4. Cancelar solicitação.");
+                System.out.println("5. Logout");
+                System.out.println("6. Sair");
             }
 
             System.out.println("Escolha: ");
             int opcao = sc.nextInt();
             sc.nextLine(); // Consome a quebra de linha (Enter) pendente do nextInt()
+            System.out.println("============================================================");
 
             // Bloco 2: Processa a escolha do usuário
             if(usuarioLogado == null && adminLogado == null) {
@@ -186,11 +232,11 @@ public class Main {
                 // Ações para ADMIN LOGADO
                 switch (opcao) {
                     // TODO: Implementar métodos de admin
-                    case 1 -> System.out.println("TODO: verificarSolicitacoes()"); //verificarSolicitacoes();
-                    case 2 -> System.out.println("TODO: verificarAnimais()"); //verificarAnimais();
-                    case 3 -> adicionarAnimal(); //adicionarAnimal();
+                    case 1 -> verificarSolicitacoes(); //verificarSolicitacoes();
+                    case 2 -> verificarAnimal(); //verificarAnimais();
+                    case 3 -> adicionarAnimal();
                     case 4 -> fluxoResgate(); // Admin também pode registrar resgate
-                    case 5 -> System.out.println("TODO: adicionarAdmin()"); //adicionarAdmin();
+                    case 5 -> removerAnimal();
                     case 6 -> { adminLogado = null; System.out.println("Logout realizado."); }
                     case 7 -> { System.out.println("Saindo..."); return; }
                     default -> System.out.println("Opção inválida!");
@@ -201,14 +247,20 @@ public class Main {
                     case 1 -> fluxoAdocao();
                     case 2 -> fluxoResgate();
                     case 3 -> verSolicitacoes();
-                    case 4 -> { usuarioLogado = null; System.out.println("Logout realizado."); }
-                    case 5 -> { System.out.println("Saindo..."); return; }
+                    case 4 -> fluxoCancelarSolicitacao();
+                    case 5 -> { usuarioLogado = null; System.out.println("Logout realizado."); }
+                    case 6 -> { System.out.println("Saindo..."); return; }
                     default -> System.out.println("Opção inválida!");
                 }
             }
         }
     }
 
+
+    // ======================================================== FLUXOS QUE COMPÕEM A MAIN PRINCIPAL ========================================================
+
+
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ FLUXOS USUÁRIO COMUM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     /**
      * Controla o fluxo de usuário para registrar uma nova solicitação de adoção.
      * Se o usuário não estiver logado, chama {@link #autenticarUsuario()} primeiro.
@@ -244,7 +296,10 @@ public class Main {
             Animal escolhido = animais.get(indice);
 
             // Cria a solicitação específica de adoção
-            SolicitacaoAdocao solicitacaoAdocao = new SolicitacaoAdocao(usuarioLogado, escolhido);
+            SolicitacaoAdocao solicitacaoAdocao = new SolicitacaoAdocao(usuarioLogado.getCpf(), escolhido.getId());
+
+            SolicitacaoDAO solicitacaoDAO = new SolicitacaoDAO();
+            solicitacaoDAO.inserir(solicitacaoAdocao);
 
             // Registra a solicitação no serviço
             solicitacoes.registrarSolicitacao(solicitacaoAdocao);
@@ -281,7 +336,10 @@ public class Main {
         String descricao = sc.nextLine();
 
         // Passo 3: Criar e registrar a solicitação de resgate
-        SolicitacaoResgate solicitacaoResgate = new SolicitacaoResgate(usuarioLogado, especie, sexo, local, descricao);
+        SolicitacaoResgate solicitacaoResgate = new SolicitacaoResgate(usuarioLogado.getCpf(), especie, sexo, local, descricao);
+        SolicitacaoDAO solicitacaoDAO = new SolicitacaoDAO();
+        solicitacaoDAO.inserir(solicitacaoResgate);
+
         solicitacoes.registrarSolicitacao(solicitacaoResgate);
 
         System.out.println("Solicitação de resgate registrada!");
@@ -317,36 +375,35 @@ public class Main {
      * Define a variável de sessão ({@code usuarioLogado} ou {@code adminLogado}) apropriada.
      */
     private static void login(){
+        User usuarioNaoLogado = null;
         System.out.print("Email: ");
         String email = sc.nextLine();
+        try {
+            usuarioNaoLogado = userDAO.getUserEmail(email);
+        } catch (Exception e) {
+            System.out.println("Usuário não encontrado, ou problema com banco!");
+            return;
+        }
         System.out.print("Senha: ");
         String senha = sc.nextLine();
 
-        // Tenta encontrar um usuário comum com o email e senha
-        usuarioLogado = usuarios.stream()
-                .filter(u -> u.getEmail().equals(email) && u.getSenha().equals(senha))
-                .findFirst()
-                .orElse(null); // Retorna null se não encontrar
-
-        // Se não for usuário comum, tenta encontrar um admin
-        if(usuarioLogado == null){
-            adminLogado = admins.stream()
-                    .filter(a -> a.getEmail().equals(email) && a.getSenha().equals(senha))
-                    .findFirst()
-                    .orElse(null);
-
-            if(adminLogado == null){
-                // Se não encontrou nem usuário nem admin
-                System.out.println("\nLogin ou senha incorreto!");
+        if(senha.equals(usuarioNaoLogado.getSenha())){
+            if(usuarioNaoLogado instanceof Admin)
+            {
+                adminLogado = (Admin) usuarioNaoLogado;
+                System.out.println("\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Bem-vindo Admin, " + adminLogado.getNome() + " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             }
-            else {
-                // Login de admin bem-sucedido
-                // BUGFIX: A mensagem de boas-vindas do admin estava usando a variável errada (usuarioLogado)
-                System.out.println("Bem-vindo Admin, " + adminLogado.getNome());
+
+            else if( usuarioNaoLogado instanceof  User)
+            {
+                usuarioLogado =  usuarioNaoLogado;
+                System.out.println("\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Bem-vindo, " + usuarioLogado.getNome() + " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             }
-        } else {
-            // Login de usuário comum bem-sucedido
-            System.out.println("Bem-vindo, " + usuarioLogado.getNome());
+            else { System.out.println("Conta inexistente ou tipo desconhecido."); }
+        }
+        else
+        {
+            System.out.println("Senha incorreta!");
         }
     }
 
@@ -370,11 +427,12 @@ public class Main {
         // Converte a renda de String para float
         float renda = Float.parseFloat(rendaStr);
 
-        // Cria o novo usuário e o define como logado
-        usuarioLogado = new User(nome, email, cpf, senha, renda);
-        // Adiciona o novo usuário à "base de dados" em memória
-        usuarios.add(usuarioLogado);
 
+        // Cria o novo usuário e o define como logado
+        User user = new User(nome, email, cpf, senha, renda, true);
+
+        userDAO.inserir(user);
+        usuarioLogado = user;
         System.out.println("Usuario cadastrado e logado com sucesso!");
     }
 
@@ -386,7 +444,13 @@ public class Main {
      */
     public static void verSolicitacoes(){
         // Busca no serviço apenas as solicitações do usuário logado
-        List<Solicitacao> userSolicitacoes = solicitacoes.listarPorUsuario(usuarioLogado);
+        List<Solicitacao> userSolicitacoes = new ArrayList<>();
+
+        try {
+            userSolicitacoes = solicitacaoDAO.listarTodasSolicitacoesCpf(usuarioLogado.getCpf());
+        } catch (Exception e) {
+            System.out.println("Erro ao listar solicitacoes!");
+        }
 
         // BUGFIX: Verifica se a lista está nula OU vazia
         if(userSolicitacoes == null || userSolicitacoes.isEmpty()){
@@ -405,11 +469,10 @@ public class Main {
         }
     }
 
-    // --- Métodos de Admin (TODO) ---
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Fluxos somente do Admin  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     // private static void verificarSolicitacoes() { ... }
-    // private static void verificarAnimais() { ... }
-    // private static void adicionarAnimal() { ... }
+    // private static void adicionarAdmin() { ... }
 
     //criar atributo para raça do animal
     private static void adicionarAnimal() {
@@ -418,11 +481,11 @@ public class Main {
         System.out.print("Idade:");
         Integer idade = Integer.parseInt(sc.nextLine());
         System.out.print("Especie:");
-        String sexo = sc.nextLine();
+        String especie = sc.nextLine();
         System.out.print("Sexo:");
-        String local = sc.nextLine();
+        String sexo = sc.nextLine();
         System.out.print("Porte:");
-        String descricao = sc.nextLine();
+        String porte = sc.nextLine();
         System.out.print("Peso:");
         float peso = Float.parseFloat(sc.nextLine());
         System.out.print("Personalidade:");
@@ -434,12 +497,193 @@ public class Main {
         System.out.print("Situacao:");
         String situacao = sc.nextLine();
 
-        Animal animal = new Animal(65, nome, idade, sexo, local, descricao, situacao, personalidade, historico, localEncontrado, peso);
+        Animal animal = new Animal(65, nome, idade, especie, sexo, personalidade, historico, localEncontrado, situacao, porte, peso);
 
         animais.add(animal);
         animalDAO.inserir(animal);
         System.out.println("Animal adicionado ao banco de dados com sucesso!");
+    }
+
+    private static void removerAnimal() {
+        try {
+            List<Animal> animaisBanco = animalDAO.listarTodos();
+
+            System.out.println("\nAnimais vindo do BANCO:");
+            for (Animal a : animaisBanco) {
+                System.out.println(a);
+            }
+        } catch (Exception e) {
+            System.out.println("Erro ao tentar acessa o banco de dados!");
+            e.printStackTrace();
+        }
+
+        try {
+            System.out.print("Nome: ");
+            String nome = sc.nextLine();
+            System.out.print("ID:");
+            Integer ID = Integer.parseInt(sc.nextLine());
+
+            animalDAO.deletarPorId(ID);
+            System.out.println("Animal removido com sucesso!");
+
+            List<Animal> animaisBanco = animalDAO.listarTodos();
+
+            System.out.println("\nAnimais atualizados vindo do BANCO:");
+            for (Animal a : animaisBanco) {
+                System.out.println(a);
+            }
+
+
+        } catch (Exception e) {
+            System.out.println("Erro ao tentar remover animal do banco de dados!");
+            e.printStackTrace();
+        }
 
     }
-     //private static void adicionarAdmin() { ... }
+
+    private static void verificarAnimal() {
+
+        try{
+            List<Animal> animaisBanco = animalDAO.listarTodos();
+            for(Animal a : animaisBanco){
+                System.out.println(a);
+            }
+
+        } catch (Exception e) {
+            System.out.println("Erro ao tentar acessa o banco de dados!");
+            e.printStackTrace();
+        }
+    }
+
+    // ==================== FLUXO DE VERIFICACOES DE SOLICITACOES DO ADMIN ====================
+
+    private static void verificarSolicitacoes() {
+        try {
+            List<Solicitacao> solicitacoesSistema = solicitacaoDAO.listarTodasSolicitacoes();
+            if(solicitacoesSistema == null || solicitacoesSistema.isEmpty()){
+                System.out.println("Sem solicitações pendentes no sistema");
+            } else{
+                System.out.println("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  Solicitações do sistema ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                // Itera sobre a lista de solicitações genéricas
+                for(Solicitacao s: solicitacoesSistema){
+                    // Chama o método polimórfico resumo()
+                    // O Java decide em tempo de execução qual 'resumo()' chamar
+                    // (o de SolicitacaoAdocao ou o de SolicitacaoResgate)
+                    System.out.println("ID: " + s.getId() +
+                            " | Status: " + s.getStatus() +
+                            " | " + s.resumo());
+                }
+            }
+        } catch ( Exception e ) {
+            System.out.println("Erro ao tentar ver as solicitações do sistema!");
+        }
+
+        try {
+            System.out.println("\nOpções:");
+            System.out.println("1. Aceitar adoção.");
+            System.out.println("2. Começar processo de adoção.");
+            System.out.println("3. Recusar adoção");
+            System.out.println("4. Marcar resgate como concluído");
+            System.out.println("5. Apagar solicitação");
+            System.out.println("6. Ver novamente solicitações");
+            System.out.println("7. Voltar para o MENU PRINCIPAL");
+
+            System.out.println("Escolha uma opção: ");
+            int opcao = sc.nextInt();
+            sc.nextLine();
+
+            switch (opcao) {
+                case 1 -> fluxoAceitarAdocao();
+                case 2 -> fluxoAndamentoAdocao();
+                case 3 -> fluxoRecusarAdocao();
+                case 4 -> fluxoAprovarResgate();
+                case 5 -> fluxoCancelarSolicitacao();
+                case 6 -> verificarSolicitacoes();
+                case 7 -> { System.out.println("Voltando para MENU PRINCIPAL..."); }
+            }
+        }
+        catch ( Exception e ) {
+            System.out.println("Erro ao tentar executar o fluxo de solicitacoes!");
+        }
+    }
+
+    private static void fluxoAceitarAdocao() {
+        try{
+            System.out.println("Id da adoção que você quer aceitar:");
+            int idAdocao = sc.nextInt();
+            sc.nextLine();
+            solicitacoes.aprovarAdocao(idAdocao);
+
+        }
+        catch ( Exception e ) {
+            System.out.println(" Erro no processo de Aceitar uma solicitação! ");
+        }
+    }
+
+    private static void fluxoRecusarAdocao() {
+        try{
+            System.out.println("Id da adoção que você deseja recusar:");
+            int idAdocao = sc.nextInt();
+            sc.nextLine();
+            solicitacoes.reprovarAdocao(idAdocao);
+
+            System.out.println("Solicitação de adoção reprovada com sucesso!");
+        }catch (Exception e ){
+            System.out.println("Erro no processo de Recusar solicitação");
+        }
+    }
+     private static void fluxoAndamentoAdocao() {
+        try{
+            System.out.println("Id da adoção que você deseja iniciar:");
+            int idAdocao = sc.nextInt();
+            sc.nextLine();
+
+            int sucesso = solicitacoes.andamentoSolicitacao(idAdocao);
+            if(sucesso == 1){
+                System.out.println("Processo de adoção iniciado com sucesso!");
+            }
+            else{
+                System.out.println("Falha no processo de adoção");
+            }
+
+
+        }catch (Exception e ){
+            System.out.println("Erro no andamento de Iniciar processo de adoção");
+        }
+    }
+
+    private static void fluxoAprovarResgate() {
+        try{
+            System.out.println("Id do Resgate que você deseja marcar como Feito:");
+            int idResgate = sc.nextInt();
+            sc.nextLine();
+
+            Integer sucesso = solicitacoes.aprovarResgate(idResgate);
+            if(sucesso == 1){
+                System.out.println("Resgate realizado registrado com sucesso!");
+
+                System.out.println("Adicione as informações do animal resgatado:");
+                adicionarAnimal();//tratar a entrada dos dados de tal forma que não deixe entradas vazias
+            }
+            System.out.println("Erro no processo de Aprovar Resgate");
+        }
+        catch ( Exception e ){
+            System.out.println("Erro no processo de Aprovar Resgate");
+        }
+    }
+
+    private static void fluxoCancelarSolicitacao(){
+        try{
+            verSolicitacoes();
+            System.out.println("Id da solicitação que você deseja cancelar:");
+            int idSolicitacao = sc.nextInt();
+            sc.nextLine();
+
+            solicitacaoDAO.deletarSolicitacao(idSolicitacao);
+            System.out.println("Solicitação cancelada com sucesso!");
+        }
+        catch ( Exception e ){
+            System.out.println("Erro ao tentar cancelar solicitação!");
+        }
+    }
 }

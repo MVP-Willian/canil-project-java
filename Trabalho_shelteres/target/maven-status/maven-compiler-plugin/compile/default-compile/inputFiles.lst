@@ -5,6 +5,7 @@
 /Users/michaelwillian/Documents/Repositórios/POO/Trabalho_Shelteres/src/main/java/br/com/adocao/model/SolicitacaoAdocao.java
 /Users/michaelwillian/Documents/Repositórios/POO/Trabalho_Shelteres/src/main/java/br/com/adocao/model/SolicitacaoResgate.java
 /Users/michaelwillian/Documents/Repositórios/POO/Trabalho_Shelteres/src/main/java/br/com/adocao/model/StatusSolicitacao.java
+/Users/michaelwillian/Documents/Repositórios/POO/Trabalho_Shelteres/src/main/java/br/com/adocao/model/TipoSolicitacao.java
 /Users/michaelwillian/Documents/Repositórios/POO/Trabalho_Shelteres/src/main/java/br/com/adocao/model/User.java
 /Users/michaelwillian/Documents/Repositórios/POO/Trabalho_Shelteres/src/main/java/br/com/adocao/persistence/AnimalDAO.java
 /Users/michaelwillian/Documents/Repositórios/POO/Trabalho_Shelteres/src/main/java/br/com/adocao/persistence/ConnectionFactory.java

@@ -1,3 +1,4 @@
+br/com/adocao/model/TipoSolicitacao.class
 br/com/adocao/persistence/ConnectionFactory.class
 br/com/adocao/model/User.class
 br/com/adocao/model/SolicitacaoResgate.class

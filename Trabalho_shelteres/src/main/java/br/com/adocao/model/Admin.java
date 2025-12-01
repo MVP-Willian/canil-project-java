@@ -12,6 +12,7 @@ public class Admin extends User {
 
     private boolean ativa = false;
 
+    public String getTipoConta(){ return "Admin"; }
     /**
      * Construtor para criar um novo Administrador.
      * Utiliza o construtor da superclasse User.
@@ -22,8 +23,8 @@ public class Admin extends User {
      * @param senha A senha de acesso do admin.
      * @param renda A renda mensal do admin (herdado de User).
      */
-    public Admin(String nome, String email, String cpf, String senha, float renda){
-        super(nome, email, cpf, senha, renda);
+    public Admin(String nome, String email, String cpf, String senha, float renda, boolean statusConta){
+        super(nome, email, cpf, senha, renda, statusConta);
     }
 
     /**

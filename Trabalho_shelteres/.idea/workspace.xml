@@ -5,33 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74e8cc65-cac5-424d-b7a5-1b3b01efb75e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Trabalho_Shelteres.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/br/com/adocao/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/br/com/adocao/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/br/com/adocao/model/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/br/com/adocao/model/Admin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/br/com/adocao/model/Animal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/br/com/adocao/model/Animal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/br/com/adocao/model/Solicitacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/br/com/adocao/model/Solicitacao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/br/com/adocao/model/SolicitacaoAdocao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/br/com/adocao/model/SolicitacaoAdocao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/br/com/adocao/model/SolicitacaoResgate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/br/com/adocao/model/SolicitacaoResgate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/br/com/adocao/model/StatusSolicitacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/br/com/adocao/model/StatusSolicitacao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/br/com/adocao/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/br/com/adocao/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/br/com/adocao/services/SolicitacaoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/br/com/adocao/services/SolicitacaoService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/adocao/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/adocao/model/Admin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/adocao/model/Animal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/adocao/model/Solicitacao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/adocao/model/SolicitacaoAdocao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/adocao/model/SolicitacaoResgate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/adocao/model/StatusSolicitacao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/adocao/model/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/adocao/services/SolicitacaoService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/canil.db" beforeDir="false" afterPath="$PROJECT_DIR$/canil.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adocao/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adocao/model/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/model/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adocao/model/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/model/Animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adocao/model/Solicitacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/model/Solicitacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adocao/model/SolicitacaoAdocao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/model/SolicitacaoAdocao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adocao/model/SolicitacaoResgate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/model/SolicitacaoResgate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adocao/model/TipoSolicitacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/model/TipoSolicitacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adocao/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adocao/persistence/AnimalDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/persistence/AnimalDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adocao/persistence/DatabaseInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/persistence/DatabaseInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adocao/persistence/SolicitacaoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/persistence/SolicitacaoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adocao/persistence/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/persistence/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adocao/services/SolicitacaoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/services/SolicitacaoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/adocao/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/adocao/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/adocao/model/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/adocao/model/Admin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/adocao/model/Animal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/adocao/model/Animal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/adocao/model/Solicitacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/adocao/model/Solicitacao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/adocao/model/SolicitacaoAdocao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/adocao/model/SolicitacaoAdocao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/adocao/model/SolicitacaoResgate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/adocao/model/SolicitacaoResgate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/adocao/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/adocao/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/adocao/persistence/AnimalDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/adocao/persistence/AnimalDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/adocao/persistence/DatabaseInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/adocao/persistence/DatabaseInitializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/adocao/persistence/SolicitacaoDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/adocao/persistence/SolicitacaoDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/adocao/persistence/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/adocao/persistence/UserDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/adocao/services/SolicitacaoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/adocao/services/SolicitacaoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/sistema-canil-1.0-SNAPSHOT.jar" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +47,7 @@
       <list>
         <option value="Class" />
         <option value="package-info" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -60,25 +65,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/michaelwillian/Documents/Repositórios/POO/Trabalho_Shelteres",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "to.speed.mode.migration.done": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/michaelwillian/Documents/Repositórios/POO/Trabalho_Shelteres&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java" />
@@ -145,25 +150,137 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/model/User.java</url>
+          <line>120</line>
+          <properties class="br.com.adocao.model.User" method="editarPerfil">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/model/User.java</url>
+          <line>136</line>
+          <properties class="br.com.adocao.model.User" method="mudarSenha">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/model/User.java</url>
+          <line>146</line>
+          <properties class="br.com.adocao.model.User" method="apagarConta">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/model/Admin.java</url>
+          <line>39</line>
+          <properties class="br.com.adocao.model.Admin" method="aprovar">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/model/Admin.java</url>
+          <line>46</line>
+          <properties class="br.com.adocao.model.Admin" method="reprovar">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/model/Admin.java</url>
+          <line>56</line>
+          <properties class="br.com.adocao.model.Admin" method="aprovarSolicitacaoAdocao">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/model/Admin.java</url>
+          <line>72</line>
+          <properties class="br.com.adocao.model.Admin" method="recusarSolicitacao">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/persistence/AnimalDAO.java</url>
+          <line>99</line>
+          <properties class="br.com.adocao.persistence.AnimalDAO" method="getAnimalPorId">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="91" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/persistence/AnimalDAO.java</url>
+          <line>131</line>
+          <properties class="br.com.adocao.persistence.AnimalDAO" method="marcarComoDiposnivel">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="104" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/persistence/AnimalDAO.java</url>
+          <line>146</line>
+          <properties class="br.com.adocao.persistence.AnimalDAO" method="marcarComoIndisponivel">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="105" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/persistence/AnimalDAO.java</url>
+          <line>161</line>
+          <properties class="br.com.adocao.persistence.AnimalDAO" method="getAdotadosByCpf">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="106" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/Main.java</url>
-          <line>188</line>
-          <option name="timeStamp" value="1" />
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/model/User.java</url>
+          <line>104</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/model/User.java</url>
+          <line>95</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/model/User.java</url>
+          <line>77</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/model/User.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/model/Admin.java</url>
+          <line>33</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/Main.java</url>
-          <line>189</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/Main.java</url>
-          <line>190</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/Main.java</url>
-          <line>192</line>
-          <option name="timeStamp" value="4" />
+          <line>45</line>
+          <option name="timeStamp" value="88" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

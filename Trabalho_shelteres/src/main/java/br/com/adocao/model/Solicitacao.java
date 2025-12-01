@@ -14,19 +14,19 @@ public abstract class Solicitacao {
 
     private static int contador = 1;
     private int idSolicitacao;
-    private User solicitante;
+    private String cpfSolicitacao;
     private StatusSolicitacao status; //pendente, recusada, cancelada, aprovada
-
+    private String feedbackAdmin;
     /**
      * Construtor base para todas as solicitações.
      * Atribui um ID único incremental e define o status inicial como PENDENTE.
      *
      * @param solicitante O usuário que abriu a solicitação.
      */
-    public Solicitacao(User solicitante){
-        this.solicitante = solicitante;
-        this.idSolicitacao = contador++;
+    public Solicitacao(String cpfSolicitante){
+        this.cpfSolicitacao = cpfSolicitante;
         this.status = StatusSolicitacao.PENDENTE;
+        this.feedbackAdmin = "Nenhum comentário";
     }
 
     // --- Getters e Setters ---
@@ -41,7 +41,7 @@ public abstract class Solicitacao {
      * Obtém o usuário que criou a solicitação.
      * @return O objeto User do solicitante.
      */
-    public User getSolicitante() { return solicitante; }
+    public String getSolicitante() { return cpfSolicitacao; }
 
     /**
      * Obtém o status atual da solicitação.
@@ -49,11 +49,34 @@ public abstract class Solicitacao {
      */
     public StatusSolicitacao getStatus() { return status; }
 
+    public String getFeedbackAdmin() { return feedbackAdmin; }
     /**
      * Define o status da solicitação (usado por Admins ou pelo sistema).
      * @param status O novo StatusSolicitacao.
      */
+    public void setId(int idSolicitacao) { this.idSolicitacao = idSolicitacao; }
+
     public void setStatus(StatusSolicitacao status) { this.status = status; }
+
+    public void setFeedbackAdmin(String feedbackAdmin) { this.feedbackAdmin = feedbackAdmin; }
+
+
+    public Integer getIdAnimal() {
+        return null; // padrão
+    }
+
+    public String getEspecie() {
+        return null;
+    }
+    public String getSexo() {
+        return null;
+    }
+    public String getLocal() {
+        return null;
+    }
+    public String getDescricao() {
+        return null;
+    }
 
     // --- Métodos ---
 
@@ -74,4 +97,6 @@ public abstract class Solicitacao {
      * @return Uma String com o resumo da solicitação.
      */
     public abstract String resumo();
+
+    public abstract TipoSolicitacao getTipoSolicitacao ();
 }

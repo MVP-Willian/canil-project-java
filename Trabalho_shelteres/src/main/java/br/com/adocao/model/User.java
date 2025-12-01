@@ -17,7 +17,6 @@ public class User {
     private String email;
     private String senha;
     private float renda;
-    private List<Animal> adotados;
     private boolean statusConta = false;
 
     /**
@@ -31,14 +30,13 @@ public class User {
      * @param senha A senha de acesso do usuário.
      * @param renda A renda mensal do usuário.
      */
-    public User(String nome, String email, String cpf, String senha, float renda){
+    public User(String nome, String email, String cpf, String senha, float renda, boolean statusConta) {
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
         this.senha = senha;
         this.renda = renda;
-        this.adotados = new ArrayList<>();
-        this.statusConta = true;
+        this.statusConta = statusConta;
     }
 
     // --- Getters e Setters ---
@@ -101,15 +99,13 @@ public class User {
      * Obtém a lista de animais adotados pelo usuário.
      * @return Uma lista de objetos Animal.
      */
-    public List<Animal> getAdotados(){ return adotados; }
-
-    /**
-     * Adiciona um animal à lista de adotados do usuário.
-     * @param animal O animal que foi adotado.
-     */
-    public void setAdotados(Animal animal){ adotados.add(animal); }
+    public Boolean getStatusConta(){ return this.statusConta; }
 
 
+    public void setStatusConta(boolean statusConta){ this.statusConta = statusConta; }
+
+
+    public String getTipoConta(){ return "User"; }
     // --- MÉTODOS ---
 
     /**
@@ -150,5 +146,10 @@ public class User {
      */
     public void apagarConta(){
         this.statusConta = false;
+    }
+
+    @Override
+    public String toString(){
+        return nome + " - " +  cpf + " - " + email + " - " + senha + " - ";
     }
 }
