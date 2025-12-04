@@ -4,39 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74e8cc65-cac5-424d-b7a5-1b3b01efb75e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/canil.db" beforeDir="false" afterPath="$PROJECT_DIR$/canil.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adocao/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adocao/model/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/model/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adocao/model/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/model/Animal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adocao/model/Solicitacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/model/Solicitacao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adocao/model/SolicitacaoAdocao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/model/SolicitacaoAdocao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adocao/model/SolicitacaoResgate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/model/SolicitacaoResgate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adocao/model/TipoSolicitacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/model/TipoSolicitacao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adocao/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adocao/persistence/AnimalDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/persistence/AnimalDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adocao/persistence/DatabaseInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/persistence/DatabaseInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adocao/persistence/SolicitacaoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/persistence/SolicitacaoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adocao/persistence/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/persistence/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adocao/services/SolicitacaoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/services/SolicitacaoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/adocao/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/adocao/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/adocao/model/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/adocao/model/Admin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/adocao/model/Animal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/adocao/model/Animal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/adocao/model/Solicitacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/adocao/model/Solicitacao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/adocao/model/SolicitacaoAdocao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/adocao/model/SolicitacaoAdocao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/adocao/model/SolicitacaoResgate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/adocao/model/SolicitacaoResgate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/adocao/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/adocao/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/adocao/persistence/AnimalDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/adocao/persistence/AnimalDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/adocao/persistence/DatabaseInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/adocao/persistence/DatabaseInitializer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/adocao/persistence/SolicitacaoDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/adocao/persistence/SolicitacaoDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/adocao/persistence/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/adocao/persistence/UserDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/adocao/services/SolicitacaoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/adocao/services/SolicitacaoService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/sistema-canil-1.0-SNAPSHOT.jar" beforeDir="false" />
-    </list>
+    <list default="true" id="74e8cc65-cac5-424d-b7a5-1b3b01efb75e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -86,6 +54,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/main/java" />
     </key>
   </component>
