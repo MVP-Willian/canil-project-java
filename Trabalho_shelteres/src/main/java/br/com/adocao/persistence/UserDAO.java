@@ -155,4 +155,48 @@ public class UserDAO {
         return users;
     }
 
+
+    public User login(String email, String senha){
+        String sql = "SELECT * FROM Usuario WHERE email = ? AND senha = ?";
+
+        try ( Connection cnn = ConnectionFactory.getConnection();
+              PreparedStatement stmt = cnn.prepareStatement(sql)){
+
+            stmt.setString(1, email);
+            stmt.setString(2, senha);
+
+            try ( ResultSet rs = stmt.executeQuery()){
+
+
+                //como email é chave então o resultado é para ser apenas uma
+                String nome = rs.getString("nome");
+                String cpf = rs.getString("cpf");
+                float renda = rs.getFloat("renda");
+                boolean statusConta = rs.getBoolean("status");
+                String tipoConta = rs.getString("tipoConta");
+
+
+                if(statusConta == false){
+                    System.out.println("Conta esta desativada!");
+                    return null;
+                }
+                if(tipoConta.equals("Admin")){
+                    return new Admin(nome, cpf, email, senha, renda,  statusConta);
+                }
+                else if(tipoConta.equals("User")){
+                    return new User(nome, cpf, email, senha, renda, statusConta);
+                }
+                else {
+                    System.out.println("Erro ao tentar verificar o tipo da conta");
+                    return null;
+                }
+            }
+        } catch(SQLException e){
+            System.out.println("Erro tentar fazer o login do usuário: " + e.getMessage());
+        }
+        System.out.println("Usuario não encontrado.");
+        return null;
+    }
+
+
 }

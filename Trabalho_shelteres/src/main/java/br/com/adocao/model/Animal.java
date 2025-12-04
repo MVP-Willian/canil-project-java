@@ -115,6 +115,8 @@ public class Animal {
      */
     public String getSituacao() { return situacao; }
 
+    public String getStatus() { return situacao; }
+
     // --- Setters ---
     // Setters apenas para atributos seguros(que nao dependem de outras classes)
 
@@ -178,6 +180,8 @@ public class Animal {
      */
     public void setLocalEncontrado(String localEncontrado){ this.localEncontrado = localEncontrado; }
 
+
+    public void setSituacao(String situacao){ this.situacao = situacao; }
     /**
      * Sobrescreve o método toString padrão para fornecer uma
      * representação em String mais útil do objeto Animal.
