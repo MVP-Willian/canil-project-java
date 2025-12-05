@@ -5,18 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74e8cc65-cac5-424d-b7a5-1b3b01efb75e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/services/Session.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/session/Session.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/view/AnimalDetalhesDialog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/view/TelaCadastro.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/view/TelaInicial.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/view/TelaLogin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/Main_Terminal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/view/TelaAdicionarAnimal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/view/TelaAnimais.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/view/TelaControleUsuarios.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/view/TelaFeedBackAdmin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/view/TelaResgate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/view/TelaSolicitacoesAdocao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/view/TelaSolicitacoesResgate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/canil.db" beforeDir="false" afterPath="$PROJECT_DIR$/canil.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adocao/model/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/model/Animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adocao/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adocao/model/Solicitacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/model/Solicitacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adocao/model/SolicitacaoAdocao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/model/SolicitacaoAdocao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adocao/model/SolicitacaoResgate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/model/SolicitacaoResgate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adocao/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adocao/persistence/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/persistence/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/adocao/model/Animal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/adocao/model/Animal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adocao/services/Session.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adocao/services/SolicitacaoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/services/SolicitacaoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adocao/session/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/session/Session.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/adocao/view/TelaInicial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/adocao/view/TelaInicial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/adocao/model/Solicitacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/adocao/model/Solicitacao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/adocao/model/SolicitacaoAdocao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/adocao/model/SolicitacaoAdocao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/adocao/model/SolicitacaoResgate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/adocao/model/SolicitacaoResgate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/adocao/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/adocao/model/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/com/adocao/persistence/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/adocao/persistence/UserDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/adocao/services/Session.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/adocao/services/SolicitacaoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/adocao/services/SolicitacaoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/adocao/view/TelaInicial$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/adocao/view/TelaInicial$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/adocao/view/TelaInicial.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/adocao/view/TelaInicial.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,36 +63,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main (1).executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.TelaInicial.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/michaelwillian/Documents/Repositórios/POO/Trabalho_Shelteres",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "to.speed.mode.migration.done": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main (1).executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TelaInicial.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/michaelwillian/Documents/Repositórios/POO/Trabalho_Shelteres&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/main/java" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="br.com.adocao.Main" />
+  <component name="RunManager" selected="Application.TelaInicial">
+    <configuration name="Main_Terminal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.com.adocao.Main_Terminal" />
       <module name="sistema-canil" />
       <extension name="coverage">
         <pattern>
@@ -87,10 +104,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Main_Terminal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="$USER_HOME$/Library/Java/JavaVirtualMachines/openjdk-24.0.2+12-54/Contents/Home" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="br.com.adocao.Main" />
+      <option name="MAIN_CLASS_NAME" value="br.com.adocao.Main_Terminal" />
       <module name="sistema-canil" />
       <option name="VM_PARAMETERS" value="--enable-native-access=ALL-UNNAMED " />
       <extension name="coverage">
@@ -103,14 +120,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TelaInicial" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.com.adocao.view.TelaInicial" />
+      <module name="sistema-canil" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.adocao.view.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Application.Main" />
-      <item itemvalue="Application.Main (1)" />
+      <item itemvalue="Application.TelaInicial" />
+      <item itemvalue="Application.Main_Terminal" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Main (1)" />
+        <item itemvalue="Application.TelaInicial" />
+        <item itemvalue="Application.Main_Terminal" />
+        <item itemvalue="Application.Main_Terminal" />
       </list>
     </recent_temporary>
   </component>
@@ -134,215 +165,15 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/model/User.java</url>
-          <line>120</line>
-          <properties class="br.com.adocao.model.User" method="editarPerfil">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="50" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/model/User.java</url>
-          <line>136</line>
-          <properties class="br.com.adocao.model.User" method="mudarSenha">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="51" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/model/User.java</url>
-          <line>146</line>
-          <properties class="br.com.adocao.model.User" method="apagarConta">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/model/Admin.java</url>
-          <line>39</line>
-          <properties class="br.com.adocao.model.Admin" method="aprovar">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="61" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/model/Admin.java</url>
-          <line>46</line>
-          <properties class="br.com.adocao.model.Admin" method="reprovar">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="62" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/model/Admin.java</url>
-          <line>56</line>
-          <properties class="br.com.adocao.model.Admin" method="aprovarSolicitacaoAdocao">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="63" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/model/Admin.java</url>
-          <line>72</line>
-          <properties class="br.com.adocao.model.Admin" method="recusarSolicitacao">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="64" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/persistence/AnimalDAO.java</url>
-          <line>99</line>
-          <properties class="br.com.adocao.persistence.AnimalDAO" method="getAnimalPorId">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="91" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/persistence/AnimalDAO.java</url>
-          <line>131</line>
-          <properties class="br.com.adocao.persistence.AnimalDAO" method="marcarComoDiposnivel">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="104" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/persistence/AnimalDAO.java</url>
-          <line>146</line>
-          <properties class="br.com.adocao.persistence.AnimalDAO" method="marcarComoIndisponivel">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="105" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/persistence/AnimalDAO.java</url>
-          <line>161</line>
-          <properties class="br.com.adocao.persistence.AnimalDAO" method="getAdotadosByCpf">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="106" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/model/User.java</url>
-          <line>104</line>
-          <option name="timeStamp" value="53" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/model/User.java</url>
-          <line>95</line>
-          <option name="timeStamp" value="54" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/model/User.java</url>
-          <line>77</line>
-          <option name="timeStamp" value="55" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/model/User.java</url>
-          <line>53</line>
-          <option name="timeStamp" value="56" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/model/Admin.java</url>
-          <line>33</line>
-          <properties>
-            <option name="lambda-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="60" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/Main.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="88" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/view/TelaInicial.java</url>
-          <line>20</line>
-          <properties field="btnResgate" class="br.com.adocao.view.TelaInicial" />
-          <option name="timeStamp" value="107" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/view/TelaInicial.java</url>
-          <line>22</line>
-          <properties field="btnAdotar" class="br.com.adocao.view.TelaInicial" />
-          <option name="timeStamp" value="108" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/view/TelaInicial.java</url>
-          <line>25</line>
-          <properties field="btnSolicitacoes" class="br.com.adocao.view.TelaInicial" />
-          <option name="timeStamp" value="109" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/view/TelaInicial.java</url>
-          <line>26</line>
-          <properties field="btnAdicionarAnimal" class="br.com.adocao.view.TelaInicial" />
-          <option name="timeStamp" value="110" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/view/TelaInicial.java</url>
-          <line>27</line>
-          <properties field="btnRemoverAnimal" class="br.com.adocao.view.TelaInicial" />
-          <option name="timeStamp" value="111" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/view/TelaInicial.java</url>
-          <line>28</line>
-          <properties field="btnAdicionarResgate" class="br.com.adocao.view.TelaInicial" />
-          <option name="timeStamp" value="112" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/view/TelaInicial.java</url>
-          <line>29</line>
-          <properties field="btnLogout" class="br.com.adocao.view.TelaInicial" />
-          <option name="timeStamp" value="113" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/view/TelaInicial.java</url>
-          <line>30</line>
-          <properties field="btnAceitarAdocao" class="br.com.adocao.view.TelaInicial" />
-          <option name="timeStamp" value="114" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/view/TelaInicial.java</url>
-          <line>31</line>
-          <properties field="btnRecusarAdocao" class="br.com.adocao.view.TelaInicial" />
-          <option name="timeStamp" value="116" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/view/TelaInicial.java</url>
-          <line>32</line>
-          <properties field="btnResgateConcluido" class="br.com.adocao.view.TelaInicial" />
-          <option name="timeStamp" value="117" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/view/TelaInicial.java</url>
-          <line>33</line>
-          <properties field="btnRemoverSolicitacao" class="br.com.adocao.view.TelaInicial" />
-          <option name="timeStamp" value="119" />
-        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="125" />
+        </breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/view/TelaInicial.java</url>
           <line>34</line>
-          <properties field="btnMenuPrincipal" class="br.com.adocao.view.TelaInicial" />
-          <option name="timeStamp" value="120" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/adocao/view/TelaInicial.java</url>
-          <line>35</line>
           <properties field="btnUsuarios" class="br.com.adocao.view.TelaInicial" />
-          <option name="timeStamp" value="121" />
+          <option name="timeStamp" value="135" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

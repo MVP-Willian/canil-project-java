@@ -59,11 +59,6 @@ public class User {
      */
     public String getCpf() { return cpf; }
 
-    /**
-     * Define o CPF do usuário.
-     * @param cpf O novo CPF do usuário.
-     */
-    public void setCpf(String cpf){ this.cpf = cpf; }
 
     /**
      * Obtém a renda do usuário.
@@ -75,7 +70,6 @@ public class User {
      * Define a renda do usuário.
      * @param renda A nova renda do usuário.
      */
-    public void setRenda(float renda){ this.renda = renda; }
 
     /**
      * Obtém a senha do usuário.
@@ -89,11 +83,6 @@ public class User {
      */
     public String getEmail(){ return email; }
 
-    /**
-     * Define o email do usuário.
-     * @param email O novo email do usuário.
-     */
-    public void setEmail(String email){ this.email = email; }
 
     /**
      * Obtém a lista de animais adotados pelo usuário.
@@ -102,54 +91,11 @@ public class User {
     public Boolean getStatusConta(){ return this.statusConta; }
 
 
-    public void setStatusConta(boolean statusConta){ this.statusConta = statusConta; }
-
 
     public String getTipoConta(){ return "User"; }
-    // --- MÉTODOS ---
-
-    /**
-     * Permite ao usuário editar suas informações de perfil.
-     * A alteração só é permitida se a senha atual fornecida for correta.
-     *
-     * @param senhaAtual A senha atual do usuário, para verificação.
-     * @param nome O novo nome a ser atualizado.
-     * @param cpf O novo CPF a ser atualizado.
-     * @param renda A nova renda a ser atualizada.
-     * @param email O novo email a ser atualizado.
-     */
-    public void editarPerfil(String senhaAtual, String nome, String cpf, float renda, String email){
-        if(this.senha.equals(senhaAtual)){
-            this.nome = nome;
-            this.cpf = cpf;
-            this.renda = renda;
-            this.email = email;
-        }
-    }
-
-    /**
-     * Altera a senha do usuário.
-     * A alteração só é permitida se a senha atual fornecida for correta.
-     *
-     * @param senhaAtual A senha atual do usuário, para verificação.
-     * @param senhaNova A nova senha que substituirá a atual.
-     */
-    public void mudarSenha(String senhaAtual, String senhaNova){
-        if (this.senha.equals(senhaAtual)) {
-            this.senha = senhaNova;
-        }
-    }
-
-    /**
-     * Desativa a conta do usuário.
-     * Altera o status da conta para 'false'.
-     */
-    public void apagarConta(){
-        this.statusConta = false;
-    }
 
     @Override
     public String toString(){
-        return nome + " - " +  cpf + " - " + email + " - " + senha + " - ";
+        return nome + " - " +  cpf + " - " + email + " - " + senha + " - " + cpf;
     }
 }

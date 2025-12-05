@@ -312,4 +312,48 @@ public class SolicitacaoDAO {
         return null;
     }
 
+    public void apagarSolicitacaoByCpf(String cpf_solicitante){
+        List<Solicitacao> solicitacoes = new ArrayList<>();
+        String sqlAdocao = "DELET FROM SolicitacaoAdocao WHERE id_solicitacao=?";
+        String sqlResgate = "DELET FROM SolicitacaoResgate WHERE id_solicitacao=?";
+        String sqlSolicitacao = "DELETE FROM Solicitacao WHERE id_solicitacao=?";
+
+        try {
+            solicitacoes = this.listarSolicitacoesAdocaoCpf(cpf_solicitante);
+        }catch(SQLException e){
+            System.out.println("Erro ao tentar buscar solicitacao por Cpf" + e.getMessage() );
+        }
+        for(Solicitacao solicitacao : solicitacoes){
+            int id = solicitacao.getId();
+
+            // SOLICITAÇÕES ADOCOES
+            try (Connection conn = ConnectionFactory.getConnection();
+                 PreparedStatement ps = conn.prepareStatement(sqlAdocao);){
+                ps.setInt(1, id);
+                ps.executeUpdate();
+            }catch(SQLException e){
+                System.out.println("Erro ao deletar Solicitação de adocao: " + e.getMessage());
+            }
+
+            // SOLICITAÇÕES RESGATE
+            try (Connection conn = ConnectionFactory.getConnection();
+                 PreparedStatement ps = conn.prepareStatement(sqlResgate);){
+                ps.setInt(1, id);
+                ps.executeUpdate();
+            }catch(SQLException e){
+                System.out.println("Erro ao deletar Solicitação de Resgate: " + e.getMessage());
+            }
+
+            // SOLICITACOES PRINCIPAl
+            try (Connection conn = ConnectionFactory.getConnection();
+                 PreparedStatement ps = conn.prepareStatement(sqlSolicitacao);){
+                ps.setInt(1, id);
+                ps.executeUpdate();
+            }catch(SQLException e){
+                System.out.println("Erro ao deletar Solicitação: " + e.getMessage());
+            }
+        }
+        System.out.println("Solicitacões apagadas com sucesso!");
+    }
+
 }

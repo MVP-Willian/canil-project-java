@@ -31,26 +31,6 @@ public class SolicitacaoService {
         solicitacoes.add(s);
     }
 
-    /**
-     * Retorna uma lista de todas as solicitações registradas no sistema.
-     *
-     * @return Uma lista (List) de objetos Solicitacao.
-     */
-    public List<Solicitacao> listarSolicitacoes() {
-        return solicitacoes;
-    }
-
-    /**
-     * Filtra e retorna todas as solicitações feitas por um usuário específico.
-     *
-     * @param u O usuário cujas solicitações devem ser encontradas.
-     * @return Uma lista de solicitações filtrada por usuário.
-     */
-    public List<Solicitacao> listarPorUsuario(User u){
-        return solicitacoes.stream()
-                .filter(solicitacao -> solicitacao.getSolicitante().equals(u))
-                .toList();
-    }
 
     /**
      * Altera o status de uma solicitação para APROVADO, com base no ID.
@@ -82,26 +62,13 @@ public class SolicitacaoService {
         try{
             SolicitacaoDAO solicitacaoDAO = new SolicitacaoDAO();
             solicitacaoDAO.atualizarAdocaoReprovado(id);
-            System.out.println("Descreva a justificativa da reprovação:");
 
-            Scanner sc = new Scanner(System.in);
-            String justificativa = sc.nextLine();
-            solicitacaoDAO.atualizarFeedBackAdmin(justificativa, id);
         }
         catch (Exception e){
             System.out.println("Erro ao reprovar Solicitação!");
         }
     }
 
-    public void apagarSolicitacao(int id) {
-        boolean removido = solicitacoes.removeIf(s -> s.getId() == id);
-
-        if(removido){
-            System.out.println("Solicitação removida com sucesso!");
-        } else {
-            System.out.println("Solicitação não encontrada.");
-        }
-    }
 
     public void aprovarAdocao(int id){
         try {
@@ -140,16 +107,5 @@ public class SolicitacaoService {
             System.out.println("Erro ao tentar iniciar processo de solicitação!");
         }
         return 0;
-    }
-
-    public void pendenteSolicitacao(int id){
-        try{
-            solicitacoes.stream()
-                    .filter(s -> s.getId() == id &&  s instanceof Solicitacao)
-                    .findFirst()
-                    .ifPresent(s -> s.setStatus(StatusSolicitacao.PENDENTE));
-        } catch (Exception e){
-            System.out.println("Erro ao tentar mudar solicitação para pendente!");
-        }
     }
 }

@@ -2,8 +2,7 @@ package br.com.adocao.persistence;
 
 import br.com.adocao.model.Admin;
 import br.com.adocao.model.User;
-import br.com.adocao.model.Animal;
-import br.com.adocao.persistence.AnimalDAO;
+import br.com.adocao.persistence.SolicitacaoDAO;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -90,11 +89,7 @@ public class UserDAO {
                 boolean statusConta = rs.getBoolean("status");
                 String tipoConta = rs.getString("tipoConta");
 
-
-                if(statusConta == false){
-                    System.out.println("Conta esta desativada!");
-                    return null;
-                }
+                System.out.println(nome);
                 if(tipoConta.equals("Admin")){
                     return new Admin(nome, cpf, email, senha, renda,  statusConta);
                 }
@@ -127,8 +122,8 @@ public class UserDAO {
                 if(tipo.equals("Admin")){
                     Admin user = new Admin(
                             rs.getString("nome"),
-                            rs.getString("cpf"),
                             rs.getString("email"),
+                            rs.getString("cpf"),
                             rs.getString("senha"),
                             rs.getFloat("renda"),
                             rs.getBoolean("status")
@@ -138,8 +133,8 @@ public class UserDAO {
                 else if(tipo.equals("User")){
                     User user = new User(
                             rs.getString("nome"),
-                            rs.getString("cpf"),
                             rs.getString("email"),
+                            rs.getString("cpf"),
                             rs.getString("senha"),
                             rs.getFloat("renda"),
                             rs.getBoolean("status")
@@ -181,10 +176,10 @@ public class UserDAO {
                     return null;
                 }
                 if(tipoConta.equals("Admin")){
-                    return new Admin(nome, cpf, email, senha, renda,  statusConta);
+                    return new Admin(nome, email, cpf, senha, renda,  statusConta);
                 }
                 else if(tipoConta.equals("User")){
-                    return new User(nome, cpf, email, senha, renda, statusConta);
+                    return new User(nome, email, cpf, senha, renda, statusConta);
                 }
                 else {
                     System.out.println("Erro ao tentar verificar o tipo da conta");
@@ -196,6 +191,20 @@ public class UserDAO {
         }
         System.out.println("Usuario não encontrado.");
         return null;
+    }
+
+    public void deletarUsuario(String cpf){
+        String sql = "DELETE FROM Usuario WHERE CPF = ?";
+        SolicitacaoDAO solicitacao = new SolicitacaoDAO();
+
+        try (Connection conn = ConnectionFactory.getConnection();
+        PreparedStatement ps = conn.prepareStatement(sql)){
+            solicitacao.apagarSolicitacaoByCpf(cpf);
+            ps.setString(1, cpf);
+            ps.executeUpdate();
+        }catch(SQLException e){
+            System.out.println("Erro ao deletar usuario: " + e.getMessage());
+        }
     }
 
 

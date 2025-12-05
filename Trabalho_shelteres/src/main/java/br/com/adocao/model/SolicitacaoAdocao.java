@@ -37,19 +37,24 @@ public class SolicitacaoAdocao extends Solicitacao {
      *
      * @return Uma String formatada com detalhes da adoção.
      */
+    public String getCpfSolicitante() {
+        return getSolicitante();
+    }
+
     @Override
     public String resumo() {
         AnimalDAO animalDAO = new AnimalDAO();
         UserDAO userDAO = new UserDAO();
         Animal animal = animalDAO.getAnimalPorId(this.id_animal);
         User user = userDAO.getUserCpf(getSolicitante());
-
-        return "Adoção do animal: " + animal.getNome() +
-                " | Usuário: " + user.getNome() +
-                " | Status: " + getStatus() +
-                " | Justificativa: " + getFeedbackAdmin();
+        return getSolicitante();
+        //return "Adoção do animal: " + animal.getNome() +
+        //        " | Usuário: " + user.getNome() +
+        //        " | Status: " + getStatus() +
+        //        " | Justificativa: " + getFeedbackAdmin();
     }
     public TipoSolicitacao getTipoSolicitacao() {
         return TipoSolicitacao.ADOCAO;
     }
+
 }

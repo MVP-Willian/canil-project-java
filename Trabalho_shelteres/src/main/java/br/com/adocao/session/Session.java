@@ -5,7 +5,7 @@ import br.com.adocao.model.User;
 
 
 public class Session {
-    private static User usuarioLogado;
+    private static  User usuarioLogado;
 
     public static  void setUsuarioLogado(User user){
         usuarioLogado = user;

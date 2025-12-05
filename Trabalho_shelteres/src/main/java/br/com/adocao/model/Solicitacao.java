@@ -45,9 +45,12 @@ public abstract class Solicitacao {
 
     /**
      * Obtém o status atual da solicitação.
+     *
      * @return O enum StatusSolicitacao (PENDENTE, APROVADO, etc.).
      */
-    public StatusSolicitacao getStatus() { return status; }
+    public StatusSolicitacao getStatus() {
+        return status;
+    }
 
     public String getFeedbackAdmin() { return feedbackAdmin; }
     /**
@@ -99,4 +102,6 @@ public abstract class Solicitacao {
     public abstract String resumo();
 
     public abstract TipoSolicitacao getTipoSolicitacao ();
+
+    public abstract String getCpfSolicitante();
 }

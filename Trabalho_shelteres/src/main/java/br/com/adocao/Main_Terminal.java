@@ -4,10 +4,6 @@ import br.com.adocao.model.*;
 import br.com.adocao.persistence.*;
 import br.com.adocao.services.*;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.awt.*;
 import java.util.*;
 import java.util.List;
 
@@ -18,7 +14,7 @@ import java.util.List;
  * <p>
  * Esta classe utiliza listas em memória para simular um banco de dados.
  */
-public class Main {
+public class Main_Terminal {
     // ======================================================== Variáveis Estáticas Globais ==========================================
 
     /** Scanner global para ler a entrada do usuário em todo o sistema. */
@@ -65,14 +61,12 @@ public class Main {
 
         testarAnimalDAO();
 
-        // 2. Preenche o sistema com dados de exemplo para teste.
-        carregarDadosIniciais();
-        // 3. Inicia o loop infinito do menu principal.
+        // 2. Inicia o loop infinito do menu principal.
         menuPrincipal();
         limparBancoAnimais();
     }
 
-    // ========================================== MÉTODOS PREVISÓRIOS ========================================================
+    // ========================================== MÉTODOS PREVISÓRIOS-TESTES ========================================================
     public static void testarAnimalDAO(){
         System.out.println(" ====== TESTE NO BANCO DE DADOS (AnimalDAO) ======");
 
@@ -130,36 +124,6 @@ public class Main {
             System.out.println("Operação cancelada.");
         }
     }
-
-
-    /**
-     * Popula as listas em memória com dados de exemplo (mock data).
-     * Isso permite testar a aplicação sem um banco de dados real.
-     */
-    private static void carregarDadosIniciais() {
-        // Adiciona um admin padrão
-        admins.add(new Admin("Admin1", "user@gmail.com",
-                "21412453412", "1234", 3600.0f, true));
-        // Adiciona um usuário padrão
-        usuarios.add(new User("Michael", "michael@gmail.com",
-                "02423459302", "1234", 15000.0f, true));
-        // Adiciona animais de exemplo
-        animais.add(new Animal(434, "trufinha", 4, "vira-lata", "M",
-                "Possui um rabo cortado", "Ainda nao foi vacinado",
-                "-3.0702569,-59.9534721", "Disponível", "grande", 35));
-        animais.add(new Animal(521, "leoleo", 4, "chouchou", "F",
-                "Cachorro não é dócil", "Orelha está machucada",
-                "-3.0702569,-59.9534721", "Solicitado", "pequeno", 35));
-    }
-
-    /**
-     * Exibe o menu principal e gerencia o loop de interação com o usuário.
-     * O menu exibido se adapta dinamicamente com base no estado de login
-     * (usuário comum, admin, ou deslogado).
-     */
-
-
-
 
 
     // ======================================================== fluxo main principal ========================================================

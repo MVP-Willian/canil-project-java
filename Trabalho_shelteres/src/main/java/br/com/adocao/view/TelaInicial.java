@@ -8,7 +8,10 @@ import br.com.adocao.model.User;
 import br.com.adocao.model.Admin;
 import br.com.adocao.persistence.AnimalDAO;
 import br.com.adocao.model.Animal;
+import br.com.adocao.persistence.SolicitacaoDAO;
 import br.com.adocao.session.Session;
+import br.com.adocao.model.Solicitacao;
+import br.com.adocao.model.SolicitacaoAdocao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,16 +26,12 @@ public class TelaInicial extends JFrame {
     private JButton btnAdotar;
     private JButton btnLogin;
     private JButton btnCadastrar;
-    private JButton btnSolicitacoes;
+    private JButton btnSolicitacoesAdocoes;
+    private JButton btnSolicitacoesResgates;
     private JButton btnAdicionarAnimal;
-    private JButton btnRemoverAnimal;
+    private JButton btnAnimais;
     private JButton btnAdicionarResgate;
     private JButton btnLogout;
-    private JButton btnAceitarAdocao;
-    private JButton btnRecusarAdocao;
-    private JButton btnResgateConcluido;
-    private JButton btnRemoverSolicitacao;
-    private JButton btnMenuPrincipal;
     private JButton btnUsuarios;
 
 
@@ -40,7 +39,7 @@ public class TelaInicial extends JFrame {
     public TelaInicial() {
 
         setTitle("Sistema de Adoção - Tela Inicial");
-        setSize(800, 500);
+        setSize(1000, 500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout(10, 10));
@@ -87,24 +86,19 @@ public class TelaInicial extends JFrame {
         //Botoes usuario
         btnAdotar = new JButton("Solicitar Adocão");
         btnResgate = new JButton("Solicitar Resgate");
-        btnSolicitacoes = new JButton("Solicitações");
-        btnRemoverSolicitacao = new JButton("Remover Solicitacao");
-        btnMenuPrincipal = new JButton("MenuPrincipal");
+        btnSolicitacoesAdocoes = new JButton("Solicit.Adocoes");
+        btnSolicitacoesResgates = new JButton("Solicit.Resgates");
         btnLogout = new JButton("Logout");
 
 
         //Botoes Admin - Remover Solicitacao pode ser de todo mundo
         btnAdicionarAnimal = new JButton("Adicionar Animal");
-        btnRemoverAnimal = new JButton("Remover Animal");
-        btnAceitarAdocao = new JButton("Aceitar Adocao");
-        btnRecusarAdocao = new JButton("Recusar Adocao");
+        btnAnimais = new JButton("Animais");
         btnAdicionarResgate = new JButton("Adicionar Resgate");
-        btnResgateConcluido = new JButton("Resgate Concluido");
         btnUsuarios = new JButton("Usuarios");
 
 
         btnAdotar.setEnabled(false);
-        btnRemoverSolicitacao.setEnabled(false);
         btnDetalhes.setEnabled(false);
 
 
@@ -157,15 +151,103 @@ public class TelaInicial extends JFrame {
         // --------------------------------------------------------------------
         btnCadastrar.addActionListener(e -> new TelaCadastro(this));
 
-        carregarTabela();
+
+
+        // -----------------------------------------
+        // 7. Comando para Adicionar Animal
+        // -----------------------------------------
+        btnAdicionarAnimal.addActionListener(e -> {new TelaAdicionarAnimal(this);
+        carregarTabelaAnimais();});
+
+
+        // -----------------------------------------
+        // 7. Comando para Solicitar Adoção
+        // -----------------------------------------
+        btnAdotar.addActionListener(e-> {
+            if(Session.getUsuarioLogado() == null) {
+                JOptionPane.showMessageDialog(null, "Primeiramente faça o login");
+                return;
+            }
+            int linha = tabelaAnimais.getSelectedRow();
+            if (linha == -1) return;
+            int id = (int) tabelaAnimais.getValueAt(linha, 0);
+
+            AnimalDAO dao = new AnimalDAO();
+            Animal animal = dao.getAnimalPorId(id);
+            User usuario = Session.getUsuarioLogado();
+
+            SolicitacaoAdocao solicitacaoAdocao = new SolicitacaoAdocao(usuario.getCpf(), animal.getId());
+            SolicitacaoDAO solicitacaoDAO = new SolicitacaoDAO();
+            solicitacaoDAO.inserir(solicitacaoAdocao);
+
+            JOptionPane.showMessageDialog(null, "Solicitação de Adoção enviada com sucesso!");
+        });
+
+        // -----------------------------------------
+        // 8. Comando para Solicitar Resgate
+        // -----------------------------------------
+        btnResgate.addActionListener(e -> {
+            if(Session.getUsuarioLogado() == null) {
+                JOptionPane.showMessageDialog(null, "Primeiramente faça o login");
+                return;
+            }
+            TelaResgate telaResgate = new TelaResgate(this);
+        });
+
+        // -----------------------------------------
+        // 9. Comando para Adicionar Resgate
+        // -----------------------------------------
+        btnAdicionarResgate.addActionListener(e -> {
+            if(Session.getUsuarioLogado() == null) {
+                JOptionPane.showMessageDialog(null, "Primeiramente faça o login");
+                return;
+            }
+            TelaResgate telaResgate = new TelaResgate(this);
+        });
+
+        // -----------------------------------------
+        // 10. Comando para Adicionar Resgate
+        // -----------------------------------------
+        btnLogout.addActionListener(e -> {
+            Session.logout();
+            atualizarInterface();
+            JOptionPane.showMessageDialog(null, "Logout com sucesso!");
+
+        });
+
+        // -----------------------------------------
+        // 10. Comando para Remover Animal
+        // -----------------------------------------
+        btnAnimais.addActionListener(e -> new TelaAnimais(this));
+
+
+        // -----------------------------------------
+        // 11. Comando ver solicitações de Adoções
+        // -----------------------------------------
+        btnSolicitacoesAdocoes.addActionListener(e -> {new TelaSolicitacoesAdocao(this);
+        carregarTabelaAnimais();});
+
+
+        // -----------------------------------------
+        // 12. Comando ver solicitações de Resgates
+        // -----------------------------------------
+        btnSolicitacoesResgates.addActionListener(e -> {new TelaSolicitacoesResgate(this);
+            carregarTabelaAnimais();});
+
+        // -----------------------------------------
+        // 13. Comando ver Controle de usuários
+        // -----------------------------------------
+        btnUsuarios.addActionListener(e -> new TelaControleUsuarios(this));
+        carregarTabelaAnimais();
         atualizarInterface();
     }
+
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> new TelaInicial().setVisible(true));
     }
 
-    private void carregarTabela() {
+    private void carregarTabelaAnimais() {
         AnimalDAO dao = new AnimalDAO();
         List<Animal> animais = new ArrayList<>();
         try {
@@ -203,18 +285,19 @@ public class TelaInicial extends JFrame {
         }
         else if(u instanceof Admin){
             // Adicionar Aceitar/remover adocao - adicionar/concluido resgate - Cancelarsolicitacao - Menuprincipal
-            painelBotoes.add(btnSolicitacoes);
+            painelBotoes.add(btnSolicitacoesAdocoes);
+            painelBotoes.add(btnSolicitacoesResgates);
             painelBotoes.add(btnAdicionarAnimal);
-            painelBotoes.add(btnRemoverAnimal);
+            painelBotoes.add(btnAnimais);
             painelBotoes.add(btnAdicionarResgate);
             painelBotoes.add(btnUsuarios);
             painelBotoes.add(btnLogout);
         }
         else {
-            painelBotoes.add(btnSolicitacoes);
+            painelBotoes.add(btnSolicitacoesAdocoes);
+            painelBotoes.add(btnSolicitacoesResgates);
             painelBotoes.add(btnAdotar);
             painelBotoes.add(btnResgate);
-            painelBotoes.add(btnRemoverSolicitacao);
             painelBotoes.add(btnLogout);
         }
         painelBotoes.revalidate();

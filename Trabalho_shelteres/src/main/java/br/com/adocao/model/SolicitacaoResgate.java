@@ -69,6 +69,9 @@ public class SolicitacaoResgate extends Solicitacao {
      *
      * @return Uma String formatada com detalhes do resgate.
      */
+    public String getCpfSolicitante() {
+        return getSolicitante();
+    }
     @Override
     public String resumo(){
         UserDAO userDAO = new UserDAO();
